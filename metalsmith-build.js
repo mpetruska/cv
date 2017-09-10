@@ -4,7 +4,7 @@ var Metalsmith  = require('metalsmith');
 var jade        = require('metalsmith-jade');
 var ignore      = require('metalsmith-ignore');
 
-var outputDir   = './public';
+var outputDir   = './build';
 
 var buildSteps =
   Metalsmith(__dirname)

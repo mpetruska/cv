@@ -1,6 +1,11 @@
 # Node
 
 node_modules/
+npm-debug.log
+
+# Build
+
+build/
 
 # Mac OS X
 

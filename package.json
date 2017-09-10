@@ -4,7 +4,7 @@
   "description": "Curriculum vitae of Mark Petruska",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js",
+    "build": "node index.js && cp build/* ./",
     "serve": "node serve.js"
   },
   "repository": {
