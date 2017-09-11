@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Curriculum vitae</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <style type="text/css">
+      body {
+          font-family: Arial, sans-serif;
+          min-height: 740px;
+      
+          background: rgb(215, 255, 215);
+          background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(250, 255, 250)), to(rgb(190, 215, 190)));
+          background: -webkit-radial-gradient(rgb(250, 255, 240), rgb(190, 215, 190));
+          background:    -moz-radial-gradient(rgb(250, 255, 240), rgb(190, 215, 190));
+          background:     -ms-radial-gradient(rgb(250, 255, 240), rgb(190, 215, 190));
+          background:      -o-radial-gradient(rgb(250, 255, 240), rgb(190, 215, 190));
+          background:         radial-gradient(rgb(250, 255, 240), rgb(190, 215, 190));
+      }
+      
+      a {
+          color: inherit;
+          text-decoration: none;
+          padding: 0 0.1em;
+          text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
+          border-radius: 0.2em;
+      
+          -webkit-transition: 0.5s;
+          -moz-transition:    0.5s;
+          -ms-transition:     0.5s;
+          -o-transition:      0.5s;
+          transition:         0.5s;
+      }
+      
+      a:hover,
+      a:focus {
+          background: rgba(255,255,255,0.5);
+          text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+      }
+      
+      .fallback-message {
+          font-family: Arial, sans-serif;
+          line-height: 1.3;
+      
+          width: 780px;
+          padding: 10px 10px 0;
+          margin: 20px auto;
+      
+          border: 1px solid #E4C652;
+          border-radius: 10px;
+          background: #EEDC94;
+      }
+      
+      .fallback-message p {
+          margin-bottom: 10px;
+      }
+      
+      .impress-supported .fallback-message {
+          display: none;
+      }
+      
+      .facts {
+          font-family: Courier New, serif;
+      }
+      
+      td {
+        padding-right: 2em;
+      }
+      
+      .step {
+          position: relative;
+          width: 900px;
+          padding: 40px;
+          margin: 20px auto;
+      
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing:    border-box;
+          -ms-box-sizing:     border-box;
+          -o-box-sizing:      border-box;
+          box-sizing:         border-box;
+      
+          font-family: Arial, sans-serif;
+          font-size: 20px;
+          line-height: 1.5;
+      }
+      
+      .impress-enabled .step {
+          margin: 0;
+          opacity: 0.3;
+      
+          -webkit-transition: opacity 1s;
+          -moz-transition:    opacity 1s;
+          -ms-transition:     opacity 1s;
+          -o-transition:      opacity 1s;
+          transition:         opacity 1s;
+      }
+      
+      .impress-enabled .step.active { opacity: 1 }
+      
+      .slide q {
+          display: block;
+          font-size: 50px;
+          line-height: 72px;
+      
+          margin-top: 100px;
+      }
+      
+      .slide q strong {
+          white-space: nowrap;
+      }
+      
+      #overview { display: none }
+      
+      .impress-on-overview .step {
+          opacity: 1;
+          cursor: pointer;
+      }
+      
+      .hint {
+          display: none;
+      
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0px;
+      
+          background: rgba(0,0,0,0.5);
+          color: #EEE;
+          text-align: center;
+      
+          font-size: 50px;
+          padding: 5px;
+      
+          z-index: 100;
+      
+          opacity: 0;
+      
+          -webkit-transform: translateY(400px);
+          -moz-transform:    translateY(400px);
+          -ms-transform:     translateY(400px);
+          -o-transform:      translateY(400px);
+          transform:         translateY(400px);
+      
+          -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
+          -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
+          -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
+          -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
+          transition:         opacity 1s,         transform 0.5s 1s;
+      }
+      
+      .impress-enabled .hint { display: block }
+      
+      .impress-on-basic-information .hint {
+          opacity: 1;
+      
+          -webkit-transform: translateY(0px);
+          -moz-transform:    translateY(0px);
+          -ms-transform:     translateY(0px);
+          -o-transform:      translateY(0px);
+          transform:         translateY(0px);
+      
+          -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s 4.5s;
+          -moz-transition:    opacity 1s 5s,    -moz-transform 0.5s 4.5s;
+          -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s 4.5s;
+          -o-transition:      opacity 1s 5s,      -o-transform 0.5s 4.5s;
+          transition:         opacity 1s 5s,         transform 0.5s 4.5s;
+      }
+      
+      .impress-enabled          { pointer-events: none }
+      .impress-enabled #impress { pointer-events: auto }
+    </style>
+  </head>
+  <body>
+    <div id="basic-information">
+      <h2>Personal details</h2>
+      <table class="facts">
+        <tr>
+          <td>name</td>
+          <td>Mark Petruska</td>
+        </tr>
+        <tr>
+          <td>date of birth</td>
+          <td>28th November, 1981</td>
+        </tr>
+        <tr>
+          <td>phone</td>
+          <td>+36 20 312 8347</td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td>petruska[dot]mark[at]gmail[dot]com</td>
+        </tr>
+        <tr>
+          <td>github</td>
+          <td><a href="https://github.com/mpetruska">mpetruska</a></td>
+        </tr>
+        <tr>
+          <td>gitlab</td>
+          <td><a href="https://gitlab.com/mpetruska">mpetruska</a></td>
+        </tr>
+        <tr>
+          <td>bitbucket</td>
+          <td><a href="https://bitbucket.org/proxy">proxy</a></td>
+        </tr>
+      </table>
+    </div>
+    <div id="objectives">
+      <h2>Objectives</h2>
+      <p>
+        Seeking professional and personal excellence.
+        Of course I'd be very lonely once I get there,
+        so also need to teach the world and others.
+      </p>
+    </div>
+    <div id="skills-1">
+      <h2>Skills</h2>
+      <p>
+        Functional programming, functional programming and fp. :)
+        (Yes, I'm very enthusiastic about it.)
+        
+      </p>
+      <p>
+        Very strong analytic thinking. I always try to find multiple
+        paths to solve a problem to be able to choose the best.
+        
+      </p>
+      <p>
+        Dedicated teacher: teaching is part of everybody's learning
+        process. ("If you can’t explain something in simple terms, you don’t understand it.")
+      </p>
+    </div>
+    <div id="skills-2">
+      <h2>Technical skills</h2>
+      <p>
+        Programming languages: <b>PureScript</b>, Haskell,
+          <b>Scala</b>, <b>F#</b>, Ocaml, <b>Elixir</b>, Erlang (and anything functional really) ...
+        
+      </p>
+      <p>
+        other programming languages: <b>C#</b>, Java, Python, <b>R</b>, T/SQL, C++, <b>JavaScript</b>
+        
+      </p>
+      <p>
+        Technologies: <b>Docker</b>, Vagrant, <b>Linux</b>, Mac, Windows, Cassandra,
+          various sql servers (MS SQL, postgres, MySql),
+          <a href="https://www.youtube.com/watch?v=VT-QFmIilRU"><b>Edeliver</b></a>, <b>Erlang OTP</b>,
+          <b>.Net framework</b>, JVM
+      </p>
+    </div>
+    <div id="certificates">
+      <h2>Certificates</h2>
+      <ul>
+        <li>2015 Certified developer on <b>Apache Spark</b> (Databricks)</li>
+        <li>2015 Certified <b>Cassandra Developer</b> (DataStax)</li>
+        <li>2013 MCPD <b>Windows Phone developer</b> 4 (Microsoft)</li>
+        <li>2013 MCPD <b>Silverlight developer 4</b> (Microsoft)</li>
+        <li>2012 MCTS <b>SQL Server 2008</b>, Database Development (Microsoft)</li>
+        <li>2011 MCPD <b>Web developer</b> 4 (Microsoft)</li>
+      </ul>
+      <h2>Independent coursework</h2>
+      <ul>
+        <li><b>Machine Learning</b> (Andrew Ng, Stanford University, Coursera)</li>
+        <li><b>R Programming</b> (Johns Hopkins University, Coursera)</li>
+        <li>The <b>Data Scientist</b>'s Toolbox (Johns Hopkins University, Coursera)</li>
+      </ul>
+    </div>
+    <div id="experience-1">
+      <h2>senior software engineer/consultant (remote)</h2>
+      <p>Unshackled.com Ltd.</p>
+      <p>2016 -</p>
+      <p>
+        Technologies used: scala, akka cluster, protocol buffers, amazon web services, docker,
+          cassandra, postgresql
+      </p>
+    </div>
+    <div id="experience-1-background">
+      <p>
+        As a founding member of the team, introduced akka clustering, protocol buffers,
+        <b>scalaz</b> and Amazon Sqs to the project. 
+        
+        
+      </p>
+      <p>
+        Also worked heavily to establish good functional programming techniques
+        with the team, through experimenting and training/mentoring colleagues.
+      </p>
+    </div>
+    <div id="experience-2">
+      <h2>scala developer</h2>
+      <p>Cake Solutions</p>
+      <p>2015 - 2016</p>
+      <p>
+        Technologies used: scala, akka, docker, vagrant, ocaml, java,
+          cassandra, mongodb
+      </p>
+    </div>
+    <div id="experience-2-background">
+      <p>
+        Got my first functional programming position at an outsourcing company.
+        Met some truly brilliant developers/engineers/professors and learned a lot.
+        Quickly caught up the pace and soon I became a reliable team member.
+      </p>
+    </div>
+    <div id="experience-3">
+      <h2>senior software engineer</h2>
+      <p>EPAM Systems</p>
+      <p>2013 - 2015</p>
+      <p>Technologies used: C#, C++, WPF, F# (training colleagues)</p>
+    </div>
+    <div id="experience-3-background">
+      <p>
+        While working at Epam, I truly became a master of object-oriented
+        programming and design; although working with object-oriented
+        code, libraries and tools always felt a little "strange" to me.
+        
+      </p>
+      <p>
+        After doing a thorough research on programming paradigms and
+        methodologies, I fell in love with functional programming.
+        While deepening my understanding I started to also teach
+        colleagues to F# and to Scala at some extent.
+      </p>
+    </div>
+    <div id="experience-4">
+      <h2>senior software engineer</h2>
+      <p>LogMeIn</p>
+      <p>2012 - 2013</p>
+      <p>Technologies used: C#, C++, Asp.Net</p>
+    </div>
+    <div id="experience-4-background">
+      <p>
+        While working at LogMeIn I learned a lot, mostly about
+        human interactions and workspace politics in a "large company"
+        setting. It quickly turned out to me that the culture of the
+        enterprise did not fit me well; and we would just hurt
+        each other if I were to participate longer.
+        
+      </p>
+      <p>
+        Before LogMeIn I mainly worked at small companies in various
+        C# developer roles.
+        (More details can be found on <a href="https://www.linkedin.com/in/mark-petruska-1a611527">LinkedIn</a>.)
+      </p>
+    </div>
+  </body>
+</html>
