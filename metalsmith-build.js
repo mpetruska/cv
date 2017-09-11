@@ -11,7 +11,7 @@ var buildSteps =
     .source('./src')
     .destination(outputDir)
     .clean(true)
-    .use(ignore('!index.jade'))
+    .use(ignore('!{index,mark-petruska}.jade'))
     .use(jade({
       pretty: true,
     }));

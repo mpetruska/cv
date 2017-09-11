@@ -1,0 +1,67 @@
+doctype html
+html(lang="en")
+  head
+    title Curriculum vitae
+    
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=1024")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    
+    include css
+  
+  body.impress-not-supported
+  
+    .fallback-message
+      p Your browser <b>doesn't support the features required</b> by impress.js,
+      | so you are presented with a simplified version of this presentation.
+      | For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.
+  
+    #impress
+    
+      #basic-information.step(data-x="0", data-y="0")
+        include basic-information
+      
+      #menu.step(data-x="-1000", data-y="1000")
+        include menu
+      
+      #overview.step(data-x="1500", data-y="1000", data-scale="4")
+      
+      #objectives.step(data-x="0", data-y="1000")
+        include objectives
+      
+      #skills-1.step(data-x="0", data-y="2000")
+        include skills-1
+      
+      #skills-2.step(data-x="0", data-y="2000", data-rotate-x="-90")
+        include skills-2
+      
+      #experience-1.step(data-x="1000", data-y="750", data-rotate="-90")
+        include experience-1
+      
+      #experience-1-background.step(data-x="1000", data-y="750", data-rotate="-90", data-rotate-y="90")
+        include experience-1-background
+      
+      #experience-2.step(data-x="2000", data-y="750", data-rotate="-90")
+        include experience-2
+      
+      #experience-2-background.step(data-x="2000", data-y="750", data-rotate="-90", data-rotate-y="90")
+        include experience-2-background
+      
+      #experience-3.step(data-x="3000", data-y="750", data-rotate="-90")
+        include experience-3
+      
+      #experience-3-background.step(data-x="3000", data-y="750", data-rotate="-90", data-rotate-y="90")
+        include experience-3-background
+      
+      #experience-4.step(data-x="4000", data-y="750", data-rotate="-90")
+        include experience-4
+      
+      #experience-4-background.step(data-x="4000", data-y="750", data-rotate="-90", data-rotate-y="90")
+        include experience-4-background
+    
+    .hint
+      p Use a spacebar or arrow keys to navigate
+
+    include impress
+    script(type="text/javascript").
+      impress().init();
