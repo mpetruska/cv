@@ -2,5 +2,42 @@ doctype html
 html(lang="en")
   head
     title Curriculum vitae
-  body
-    include basic-information
+    
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=1024")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    
+    include css
+  
+  body.impress-not-supported
+  
+    .fallback-message
+      p Your browser <b>doesn't support the features required</b> by impress.js,
+      | so you are presented with a simplified version of this presentation.
+      | For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.
+  
+    #impress
+    
+      #basic-information.step(data-x="0", data-y="0")
+        include basic-information
+      
+      #menu.step(data-x="-1000", data-y="1000")
+        include menu
+      
+      #overview.step(data-x="3000", data-y="500", data-scale="10")
+      
+      #objectives.step(data-x="0", data-y="1000")
+        include objectives
+      
+      #skills-1.step(data-x="0", data-y="2000")
+        include skills-1
+      
+      #skills-2.step(data-x="0", data-y="2000", data-rotate-x="-90")
+        include skills-2
+    
+    .hint
+      p Use a spacebar or arrow keys to navigate
+
+    include impress
+    script(type="text/javascript").
+      impress().init();
