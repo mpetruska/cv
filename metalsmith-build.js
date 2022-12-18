@@ -1,8 +1,8 @@
 "use strict";
 
 var Metalsmith  = require('metalsmith');
-var jade        = require('metalsmith-jade');
-var ignore      = require('metalsmith-ignore');
+var jade        = require('metalsmith-pug');
+var remove      = require('@metalsmith/remove');
 
 var outputDir   = './build';
 
@@ -11,7 +11,7 @@ var buildSteps =
     .source('./src')
     .destination(outputDir)
     .clean(true)
-    .use(ignore(['*', '!{index,mark-petruska,mark-petruska_printable}.jade']))
+    .use(remove(['!{index,mark-petruska,mark-petruska_printable}.pug']))
     .use(jade({
       pretty: true,
     }));
