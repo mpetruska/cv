@@ -1,0 +1,27 @@
+{
+  "files.exclude": {
+    "business-cards/**/*.aux": true,
+    "business-cards/**/*.fdb_latexmk": true,
+    "business-cards/**/*.fls": true,
+    "business-cards/**/*.log": true,
+    "business-cards/**/*-pics.pdf": true,
+    "business-cards/**/*.synctex.gz": true,
+    "business-cards/**/*.toc": true
+  },
+  "latex-workshop.latex.tools": [
+    {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+            "-shell-escape",
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+        ],
+        "env": {}
+    }
+  ]
+}

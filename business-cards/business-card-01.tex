@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{memoir}
+
+\setstocksize{51mm}{89mm} % US size
+\setpagecc{51mm}{89mm}{*}
+\settypeblocksize{41mm}{79mm}{*}
+\setulmargins{5mm}{*}{*}
+\setlrmargins{5mm}{*}{*}
+\usepackage{xcolor}
+
+\setheadfoot{0.1pt}{0.1pt}
+\setheaderspaces{1pt}{*}{*}
+
+% Baskerville
+\usepackage[T1]{fontenc}
+\usepackage{baskervillef}
+\usepackage[varqu,varl,var0]{inconsolata}
+\usepackage[scale=.95,type1]{cabin}
+\usepackage[baskerville,vvarbb]{newtxmath}
+\usepackage[cal=boondoxo]{mathalfa}
+
+\checkandfixthelayout[fixed]
+
+\pagestyle{empty}
+
+\usepackage{pstricks}
+\usepackage{auto-pst-pdf,pst-barcode}
+
+\begin{document}
+    \begin{Spacing}{0.75}%
+    \noindent
+    \textbf{Mark Petruska}\\
+    % \tiny subtitle
+    % \hfill {\color{gray}Division / Employer}\\
+    \rule{78mm}{.3mm}\\
+    \begin{minipage}[t]{35mm}
+        \vspace{-0mm}%
+        \begin{pspicture}(25mm,25mm)
+          \psbarcode{MECARD:N:Mark,Petruska;EMAIL:me@markpetruska.ml;TEL:+36203128347;;}{eclevel=L width=1 height=1}{qrcode}
+        \end{pspicture}
+    \end{minipage}
+    \hspace{1mm}
+    \begin{minipage}[t]{42mm}
+        \vspace{-0mm}%
+        \begin{flushleft}
+        {\scriptsize
+            \begin{Spacing}{1}%
+            \textbf{Head of Smart Contracts}\\
+            \hspace{5mm}formal methods\\
+            \hspace{5mm}functional programming \vspace{2mm}\\
+            \end{Spacing}
+        }
+        {\tiny
+        	\begin{tabular}{rl}
+            	% {\color{gray}web} & https://fqdn/\\
+            	{\color{gray}email} & me@markpetruska.ml\\
+            	% {\color{gray}email} & mark.petruska@protonmail.com\\
+            	{\color{gray}mobile} & +36 (20) 312 8347\\
+            \end{tabular}
+            \vspace*{2mm}
+        }
+        \end{flushleft}
+    \end{minipage}
+    \rule{74mm}{0mm}\\
+    \rule{74mm}{0mm}\\
+    \fontsize{2.75mm}{3.55mm}\selectfont 262C 5BDC A9A3 D945 5D6C EF0F 4F5A FC75 BEBC CDA0
+    % \texttt{\fontsize{3.15mm}{3.55mm}\selectfont 262C 5BDC A9A3 D945 5D6C EF0F 4F5A FC75 BEBC CDA0} % GPG KEY ID
+    \end{Spacing}
+\end{document}
