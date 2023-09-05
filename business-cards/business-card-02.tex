@@ -1,0 +1,69 @@
+\documentclass[11pt,a4paper]{memoir}
+
+\setstocksize{54mm}{85mm} % Credit card size
+\setpagecc{54mm}{85mm}{*}
+\settypeblocksize{44mm}{75mm}{*}
+\setulmargins{5mm}{*}{*}
+\setlrmargins{5mm}{*}{*}
+\usepackage{xcolor}
+
+\setheadfoot{0.1pt}{0.1pt}
+\setheaderspaces{1pt}{*}{*}
+
+% Baskerville
+\usepackage[T1]{fontenc}
+\usepackage{baskervillef}
+\usepackage[varqu,varl,var0]{inconsolata}
+\usepackage[scale=.95,type1]{cabin}
+\usepackage[baskerville,vvarbb]{newtxmath}
+\usepackage[cal=boondoxo]{mathalfa}
+
+\checkandfixthelayout[fixed]
+
+\pagestyle{empty}
+
+\usepackage{pstricks}
+\usepackage{auto-pst-pdf,pst-barcode}
+
+\begin{document}
+    \begin{Spacing}{0.75}%
+    \noindent
+    \textbf{Mark Petruska}\\
+    % \tiny subtitle
+    % \hfill {\color{gray}Division / Employer}\\
+    \rule{75mm}{.3mm}\\
+    \begin{minipage}[t]{30mm}
+        \vspace{-0mm}%
+        \begin{pspicture}(25mm,25mm)
+          \psbarcode{MECARD:N:Petruska,Mark;EMAIL:me@markpetruska.eu;TEL:+36203128347;;}{eclevel=L width=1 height=1}{qrcode}
+        \end{pspicture}
+    \end{minipage}
+    \hspace{1mm}
+    \begin{minipage}[t]{55mm}
+        \vspace{-0mm}%
+        \begin{flushleft}
+        {\scriptsize
+            \begin{Spacing}{1}%
+                \textbf{Head of Smart Contracts}                \\
+                \hspace{5mm}formal methods                      \\
+                \hspace{5mm}functional programming \vspace{2mm} \\
+            \end{Spacing}
+        }
+        {\tiny
+            \begin{Spacing}{1}%
+                \phantom{mobile} \llap{\color{gray}web}    \hspace{2.8em} \phantom{me@}markpetruska.eu            \\
+                \phantom{mobile} \llap{\color{gray}email}  \hspace{2.8em} me@markpetruska.eu                      \\
+                \phantom{mobile                            \hspace{2.8em} me} \llap{petruska.mark}@gmail.com      \\
+                \phantom{mobile                            \hspace{2.8em} me} \llap{mark.petruska}@protonmail.com \\
+                \phantom{mobile} \llap{\color{gray}mobile} \hspace{2.8em} \phantom{me@}+36 (20) 312 8347
+            \end{Spacing}
+            \vspace*{2mm}
+        }
+        \end{flushleft}
+    \end{minipage}
+    \rule{75mm}{0mm}\\
+    \rule{75mm}{0mm}\\
+    \fontsize{2.68mm}{3.53mm}\selectfont 262C 5BDC A9A3 D945 5D6C EF0F 4F5A FC75 BEBC CDA0
+    % \texttt{\fontsize{3.15mm}{3.55mm}\selectfont 262C 5BDC A9A3 D945 5D6C EF0F 4F5A FC75 BEBC CDA0} % GPG KEY ID
+    \end{Spacing}
+\end{document}
