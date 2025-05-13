@@ -1,9 +1,8 @@
 BEGIN:VCARD
-VERSION:4.0
+VERSION:3.0
+N:Petruska;Mark;;;
 FN:Mark Petruska
-N:Petruska;Mark
-EMAIL:mark.petruska@protonmail.com
-SOURCE:https://raw.githubusercontent.com/mpetruska/cv/refs/heads/master/contact.vcf
-TEL:+36203128347
-REV:20250513T174933Z
+EMAIL;TYPE=HOME:mark.petruska@protonmail.com
+TEL;TYPE=CELL:+36203128347
+REV:20250513T183522Z
 END:VCARD
