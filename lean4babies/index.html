@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Flipbook</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #f0f0f0; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        #book { max-width: 100%; max-height: 100vh; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .controls { text-align: center; margin: 20px 0; }
+        button { padding: 10px 20px; margin: 0 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+    </style>
+    <script src="./page-flip.browser.js"></script>
+</head>
+<body>
+    <div class="controls">
+        <button id="prev">Previous</button>
+        <span id="pageInfo">Page 1</span>
+        <button id="next">Next</button>
+    </div>
+    <div id="book"></div>
+
+    <script>
+        const images = [
+          'Lean4ForBabies_000.png',
+          'page01.png', 'page02.png', 'page03.png', 'page04.png', 'page05.png', 'page06.png',
+          'page07.png', 'page08.png', 'page09.png', 'page10.png', 'page11.png', 'page12.png',
+          'Lean4ForBabies_007.png'
+        ];
+
+        const pageFlip = new St.PageFlip(document.getElementById('book'), {
+            width: 400,      // Base page width (adjust to your images)
+            height: 600,     // Base page height
+            size: 'stretch', // Responsive: stretches to fit container
+            minWidth: 315,
+            minHeight: 420,
+            maxWidth: 1000,
+            maxHeight: 1350,
+            showCover: true,
+            mobileScrollSupport: true,
+            swipeDistance: 50,
+            flipDuration: 0.6
+        });
+
+        pageFlip.loadFromImages(images);
+
+        // Navigation buttons
+        document.getElementById('prev').onclick = () => pageFlip.flipPrev('top');
+        document.getElementById('next').onclick = () => pageFlip.flipNext('top');
+
+        // Update page info
+        pageFlip.on('flip', (e) => {
+            document.getElementById('pageInfo').textContent = `Page ${e.data + 1}`;
+            updateButtons();
+        });
+
+        function updateButtons() {
+            const prevBtn = document.getElementById('prev');
+            const nextBtn = document.getElementById('next');
+            prevBtn.disabled = pageFlip.getCurrentPageIndex() === 0;
+            nextBtn.disabled = pageFlip.getCurrentPageIndex() === pageFlip.getPageCount() - 1;
+        }
+        updateButtons();
+    </script>
+</body>
+</html>
